@@ -21,11 +21,11 @@ function agregarSerie(serie) {
   fetch("https://series-tracker-rk1z.onrender.com/series", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(serie)})
   .then(res => {
     if (res.ok) {
-        window.location.href = "index.html"
+        window.location.href = "/index.html"
     }
   })
 }
 
 document.getElementById("back").addEventListener("click", () => {
-    window.location.href = "index.html"
+    window.location.href = "/index.html"
 })

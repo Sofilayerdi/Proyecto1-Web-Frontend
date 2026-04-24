@@ -3,7 +3,7 @@ const id = params.get("id")
 
 if (!id) {
     alert("No se encontró el ID de la serie. Volviendo al inicio...")
-    window.location.href = "index.html"
+    window.location.href = "/index.html"
 }
 
 fetch(`https://series-tracker-rk1z.onrender.com/series/${id}`)
@@ -40,7 +40,7 @@ document.querySelector("#add-serie").addEventListener("submit", (e) => {
     })
     .then(res => {
         if (res.ok) {
-            window.location.href = "index.html"
+            window.location.href = "/index.html"
         } else {
             alert("Error al guardar los cambios.")
         }
@@ -52,5 +52,5 @@ document.querySelector("#add-serie").addEventListener("submit", (e) => {
 })
 
 document.getElementById("back").addEventListener("click", () => {
-    window.location.href = "index.html"
+    window.location.href = "/index.html"
 })

@@ -57,7 +57,7 @@ function cargarSeries(page) {
       })
 
       card.querySelector(".edit").addEventListener("click", () => {
-        window.location.href = 'edit.html?id=' + serie.id
+        window.location.href = '/edit.html?id=' + serie.id
       })
 
     })
@@ -76,7 +76,7 @@ function eliminarSerie(id) {
 }
 
 document.getElementById("addSerie").addEventListener("click", () => {
-    window.location.href = "create.html"
+    window.location.href = "/create.html"
 })
 
 
