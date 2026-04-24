@@ -21,17 +21,25 @@ function cargarSeries(page) {
       const card = document.createElement("div")
       card.className = "card"
       card.innerHTML = `
-        <img src="${serie.img}" alt="${serie.name}"/>
-        <h3>${serie.name}</h3>
-        <p>Episodio actual: ${serie.current_ep}</p>
-        <p>Total episodios: ${serie.total_ep}</p>
-        <progress value="${serie.current_ep}" max="${serie.total_ep}"/>
-        <button class="delete" data-id="${serie.id}">Borrar</button>
+          <img src="${serie.img}" alt="${serie.name}" onerror="this.style.background='#FBEAF0'"/>
+          <div class="card-body">
+              <h3>${serie.name}</h3>
+              <p>Ep. ${serie.current_ep} / ${serie.total_ep}</p>
+              <progress value="${serie.current_ep}" max="${serie.total_ep}"></progress>
+              <div class="card-actions">
+                  <button class="edit" data-id="${serie.id}">Editar</button>
+                  <button class="delete" data-id="${serie.id}">Borrar</button>
+              </div>
+          </div>
       `
       contenedor.appendChild(card)
 
       card.querySelector(".delete").addEventListener("click", () => {
           eliminarSerie(serie.id)
+      })
+
+      card.querySelector(".edit").addEventListener("click", () => {
+        window.location.href = 'edit.html?id=' + serie.id
       })
 
     })
