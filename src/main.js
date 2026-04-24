@@ -22,3 +22,6 @@ function cargarSeries() {
   })
 }
 
+document.getElementById("addSerie").addEventListener("click", () => {
+    window.location.href = "create.html"
+})
