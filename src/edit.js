@@ -6,7 +6,7 @@ if (!id) {
     window.location.href = "index.html"
 }
 
-fetch(`http://localhost:8000/series/${id}`)
+fetch(`https://series-tracker-rk1z.onrender.com/series/${id}`)
     .then(res => {
         if (!res.ok) throw new Error(`Error del servidor: ${res.status}`)
         return res.json()
@@ -33,7 +33,7 @@ document.querySelector("#add-serie").addEventListener("submit", (e) => {
         img: document.getElementById("imagen").value
     }
 
-    fetch(`http://localhost:8000/series/${id}`, {
+    fetch(`https://series-tracker-rk1z.onrender.com/series/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(serie)

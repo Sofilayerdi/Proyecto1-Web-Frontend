@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
 
 
 function agregarSerie(serie) {
-  fetch("http://localhost:8000/series", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(serie)})
+  fetch("https://series-tracker-rk1z.onrender.com/series", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(serie)})
   .then(res => {
     if (res.ok) {
         window.location.href = "index.html"

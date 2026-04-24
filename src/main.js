@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function cargarSeries(page) {
   const q = document.getElementById("buscar").value.trim()  
-  fetch(`http://localhost:8000/series?page=${page}&limit=5&q=${encodeURIComponent(q)}`)
+  fetch(`https://series-tracker-rk1z.onrender.com/series?page=${page}&limit=5&q=${encodeURIComponent(q)}`)
   .then(res => res.json())
   .then(series => {
     if (!series || series.length === 0) {
@@ -65,7 +65,7 @@ function cargarSeries(page) {
 }
 
 function eliminarSerie(id) {
-    fetch(`http://localhost:8000/series/${id}`, {
+    fetch(`https://series-tracker-rk1z.onrender.com/series/${id}`, {
         method: "DELETE"
     })
     .then(res => {
@@ -96,7 +96,7 @@ document.getElementById("after").addEventListener("click", () => {
 
 document.getElementById("descargar").addEventListener("click", async () =>{
     const q = document.getElementById("buscar").value.trim()
-    const res = await fetch(`http://localhost:8000/series?limit=10000&q=${encodeURIComponent(q)}`)
+    const res = await fetch(`https://series-tracker-rk1z.onrender.com/series?limit=10000&q=${encodeURIComponent(q)}`)
     const series = await res.json()
     descargarXLSX(series)
 } )
