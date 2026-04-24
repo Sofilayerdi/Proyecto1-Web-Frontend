@@ -11,17 +11,14 @@ function cargarSeries() {
     series.forEach(serie =>{
       const card = document.createElement("div")
       card.className = "card"
-
-      
+      card.innerHTML = `
+                      <img src="${serie.img}" alt="${serie.name}"/>
+                      <h3>${serie.name}</h3>
+                      <p>Episodio actual: ${serie.current_ep}</p>
+                      <p>Total episodios: ${serie.total_ep}</p>
+                      `
+      contenedor.appendChild(card)
     })
-    card.innerHTML = `
-                    <img src="${serie.img}" alt="${serie.name}"/>
-                    <h3>${serie.name}</h3>
-                    <p>Episodio actual: ${serie.current_ep}</p>
-                    <p>Total episodios: ${serie.total_ep}</p>
-                `
-
-    contenedor.appendChild(card)
   })
 }
 
