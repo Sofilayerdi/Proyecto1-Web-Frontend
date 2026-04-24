@@ -25,6 +25,22 @@ html {
     margin-top: 6px;
 }
 
+.search {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#buscar {
+    width: 350px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: #4a1a24;
+    border-width: 2px;
+    padding: 0 10px;
+    margin: 10px;
+}
+
 .content {
     display: flex;
     justify-content: center;
@@ -101,9 +117,9 @@ html {
 }
 
 #addSerie {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    
+    
+    
     width: 55px;
     height: 55px;
     border-radius: 50%;
@@ -132,6 +148,28 @@ html {
     opacity: 0.4;
     cursor: not-allowed;
 }
+
+.botones {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+ 
+#descargar {
+    background: white;
+    border: 0.5px solid #c4909a;
+    border-radius: 8px;
+    padding: 8px 14px;
+    color: #6b2737;
+    font-size: 13px;
+    cursor: pointer;
+}
+ 
+#descargar:hover { background: #f5f0f1; }
 
 .form-body {
     background: #f5f0f1;
