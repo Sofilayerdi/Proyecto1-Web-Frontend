@@ -3,8 +3,9 @@
 Cliente web para gestionar series de televisión. Consume la API REST del backend usando fetch() vanilla.
 
 **Backend:** https://github.com/Sofilayerdi/Proyecto1-Web-Backend.git
+
 **App en producción:** https://seriestracker-231929.onrender.com
-*Tarda un poco en cargar
+ *Tarda un poco en cargar
 
 ## Tecnologías
 - HTML, CSS y JavaScript vanilla
