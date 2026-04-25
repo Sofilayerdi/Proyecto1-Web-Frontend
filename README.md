@@ -36,19 +36,23 @@ Cliente web para gestionar series de televisión. Consume la API REST del backen
 - Exportar la lista a Excel (.xlsx) generado manualmente con SpreadsheetML
 
 ## Challenges implementados
-- Paginación con `?page=` y `?limit=`
-- Búsqueda en tiempo real con debounce
-- Exportar a Excel real (.xlsx) sin librerías externas, usando el formato OOXML/SpreadsheetML y un generador de ZIP manual en JavaScript
+- Códigos HTTP correctos — 201 al crear, 204 al eliminar, 404, 400
+- Validación server-side — mensajes descriptivos en texto
+- Paginación ?page= y ?limit=
+- Búsqueda ?q=
+- Ordenamiento ?sort= y ?order=asc|desc
+- Exportar la lista de series a Excel (.xlsx)
 
 ## Aplicación funcionando
 - Página inicial
-  <img width="1917" height="969" alt="image" src="https://github.com/user-attachments/assets/ce80163a-6d9c-4245-8a76-18e86a9e4626" />
+  <img width="1915" height="913" alt="image" src="https://github.com/user-attachments/assets/c0bdf923-37f0-44d8-99e7-83df611cf3e2" />
 
 - Página para agregar serie
-  <img width="1917" height="968" alt="image" src="https://github.com/user-attachments/assets/bbcea910-8a99-4148-b6b3-64d95de58ecc" />
+  <img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/5d239ced-fbdc-4a98-80b0-2aa45fa3bad0" />
 
 - Página para editar serie
-  <img width="1914" height="963" alt="image" src="https://github.com/user-attachments/assets/946cf9e1-3b86-4435-a042-641c9b3bc5a6" />
+  <img width="1912" height="970" alt="image" src="https://github.com/user-attachments/assets/900f270d-c1b5-4b6a-985e-e8fe2b362df8" />
+
 
 ## Reflexión
 Trabajar con fetch() en vanilla fue bastante directo y, cuando logré entender bien la estructura, se me hizo más fácil continuar con el código y las funciones. Al no usar librerías externas, hay que poner más atención a los detalles, pero eso me ayudó a entender mejor cómo funciona JavaScript. De los challenges, el de Excel fue el más interesante. Entender el formato OOXML y construir el archivo byte por byte fue difícil, pero me ayudó bastante a comprender cómo funciona por dentro. Vite como bundler fue muy transparente y fácil de configurar. Me gustó que no tengo que compilar y correr todo otra vez cada vez que hago un cambio, ya que lo hace automáticamente, y además muestra los errores al instante cuando ocurre alguno. Si volvería a usar estas tecnologías para futuros proyectos.
