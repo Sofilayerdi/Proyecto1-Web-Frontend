@@ -253,3 +253,100 @@ html {
 }
 
 #back:hover { background: #f5f0f1; }
+
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #4a1a24;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+.search {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#buscar {
+    width: 350px;
+    height: 25px;
+    border-radius: 10px;
+    border-color: #4a1a24;
+    border-width: 2px;
+    padding: 0 10px;
+    margin: 0;
+}
+
+.sort-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sort-label {
+    font-size: 12px;
+    color: #7a3a52;
+    font-weight: 500;
+}
+
+.sort-btns {
+    display: flex;
+    gap: 6px;
+}
+
+.sort-btn {
+    padding: 5px 12px;
+    border: 1px solid #c4909a;
+    border-radius: 20px;
+    background: white;
+    color: #6b2737;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.sort-btn:hover {
+    background: #f5f0f1;
+}
+
+.sort-btn.active {
+    background: #6b2737;
+    color: white;
+    border-color: #6b2737;
+}
+
+#order-toggle {
+    padding: 5px 14px;
+    border: 1px solid #c4909a;
+    border-radius: 20px;
+    background: white;
+    color: #6b2737;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#order-toggle:hover {
+    background: #f5f0f1;
+}

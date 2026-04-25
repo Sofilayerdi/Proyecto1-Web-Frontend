@@ -9,10 +9,20 @@
   <body class="body">
     <div id="app">
       <h1>Series Tracker</h1>
-      <p> Lleva el registro de las series que estas viendo</p>
+      <p> Lleva el registro de tus series</p>
     </div>
     <div class="search">
-      <input type="text" id="buscar" placeholder="Busca una serie" />
+      <div class="search-row">
+        <input type="text" id="buscar" placeholder="Busca una serie" />
+      </div>
+      <div class="sort-row">
+        <span class="sort-label">Ordenar por</span>
+        <div class="sort-btns" id="sort-btns">
+          <button class="sort-btn active" data-value="id">ID</button>
+          <button class="sort-btn" data-value="name">Nombre</button>
+        </div>
+        <button id="order-toggle" title="Cambiar orden">↑ Asc</button>
+      </div>
     </div> 
     
     <div class="content">

@@ -1,8 +1,28 @@
 let paginaActual = 1
+let sortActual = "id"
+let orderActual = "asc"
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarSeries(paginaActual);
+ 
+    document.querySelectorAll(".sort-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".sort-btn").forEach(b => b.classList.remove("active"))
+            btn.classList.add("active")
+            sortActual = btn.dataset.value
+            paginaActual = 1
+            cargarSeries(paginaActual)
+        })
+    })
 
+    const orderToggle = document.getElementById("order-toggle")
+    orderToggle.addEventListener("click", () => {
+        orderActual = orderActual === "asc" ? "desc" : "asc"
+        orderToggle.textContent = orderActual === "asc" ? "\u2191 Asc" : "\u2193 Desc"
+        paginaActual = 1
+        cargarSeries(paginaActual)
+    })
+ 
     let debounceTimer
     document.getElementById("buscar").addEventListener("input", () => {
         clearTimeout(debounceTimer)
@@ -11,14 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
             cargarSeries(paginaActual)
         }, 300)
     })
-
+ 
 })
 
 
 
 function cargarSeries(page) {
   const q = document.getElementById("buscar").value.trim()  
-  fetch(`https://series-tracker-rk1z.onrender.com/series?page=${page}&limit=5&q=${encodeURIComponent(q)}`)
+  fetch(`https://series-tracker-rk1z.onrender.com/series?page=${page}&limit=5&q=${encodeURIComponent(q)}&sort=${sortActual}&order=${orderActual}`)
   .then(res => res.json())
   .then(series => {
     if (!series || series.length === 0) {
